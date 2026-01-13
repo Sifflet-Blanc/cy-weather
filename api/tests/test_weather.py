@@ -63,7 +63,7 @@ async def test_get_forecast_success(mock_weather_service):
                 "temp_night": 2, 
                 "wind_speed": 10, 
                 "description": "blabla",
-                "icon": "icon"
+                "icon": "icon",
                 "precipitation_probability": 0.1,
                 "humidity": 60
             },
@@ -75,7 +75,7 @@ async def test_get_forecast_success(mock_weather_service):
                 "temp_night": 2, 
                 "wind_speed": 10, 
                 "description": "blabla",
-                "icon": "icon"
+                "icon": "icon",
                 "precipitation_probability": 0.1,
                 "humidity": 60
             }
