@@ -19,9 +19,12 @@ async def test_get_current_weather_success(mock_weather_service):
         "timestamp": "2026-01-14T12:00:00",
         "weather": {
             "temperature": 20.0,
+            "feels_like": 20.0,
             "humidity": 65,
+            "pressure": 10.0,
             "wind_speed": 10.0,
             "description": "Ciel dégagé",
+            "icon":"icon"
         }
     }
     mock_weather_service.get_current_weather = AsyncMock(return_value=mock_response)
