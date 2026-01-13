@@ -58,7 +58,7 @@ async def test_get_forecast_success(mock_weather_service):
         "country":"FR",
         "forecast": [
             {
-                "day": "2026-01-14", 
+                "date": "2026-01-14", 
                 "temp_min": 0,
                 "temp_max": 10,
                 "temp_day": 9, 
@@ -70,7 +70,7 @@ async def test_get_forecast_success(mock_weather_service):
                 "humidity": 60
             },
             {
-                "day": "2026-01-15", 
+                "date": "2026-01-15", 
                 "temp_min": 0,
                 "temp_max": 10,
                 "temp_day": 9, 
