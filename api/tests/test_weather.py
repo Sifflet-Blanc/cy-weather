@@ -55,8 +55,30 @@ async def test_get_current_weather_city_not_found(mock_weather_service):
 async def test_get_forecast_success(mock_weather_service):
     mock_response = {
         "forecast": [
-            {"day": "2026-01-14", "temperature": 18.0, "humidity": 60},
-            {"day": "2026-01-15", "temperature": 19.0, "humidity": 65},
+            {
+                "day": "2026-01-14", 
+                "temp_min": 0,
+                "temp_max": 10,
+                "temp_day": 9, 
+                "temp_night": 2, 
+                "wind_speed": 10, 
+                "description": "blabla",
+                "icon": "icon"
+                "precipitation_probability": 0.1,
+                "humidity": 60
+            },
+            {
+                "day": "2026-01-15", 
+                "temp_min": 0,
+                "temp_max": 10,
+                "temp_day": 9, 
+                "temp_night": 2, 
+                "wind_speed": 10, 
+                "description": "blabla",
+                "icon": "icon"
+                "precipitation_probability": 0.1,
+                "humidity": 60
+            }
         ]
     }
     mock_weather_service.get_forecast = AsyncMock(return_value=mock_response)
