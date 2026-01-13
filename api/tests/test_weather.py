@@ -54,6 +54,8 @@ async def test_get_current_weather_city_not_found(mock_weather_service):
 @patch("src.resources.weather_resource.weather_service")
 async def test_get_forecast_success(mock_weather_service):
     mock_response = {
+        "city": "Paris",
+        "country":"FR",
         "forecast": [
             {
                 "day": "2026-01-14", 
