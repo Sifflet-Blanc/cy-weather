@@ -4,7 +4,9 @@ from fastapi.testclient import TestClient
 from unittest.mock import AsyncMock, patch
 from src.resources.weather_resource import router
 from fastapi import FastAPI
-from main import app
+
+app = FastAPI()
+app.include_router(router)
 
 client = TestClient(app)
 
@@ -17,9 +19,9 @@ async def test_get_current_weather_success(mock_weather_service):
         "wind_speed": 10.0,
         "description": "Ciel dégagé",
     }
-    mock_weather_service.get_current_weather("Paris", None) = AsyncMock(return_value=mock_response)
+    mock_weather_service.get_current_weather() = AsyncMock(return_value=mock_response)
 
-    response = client.get("/weather/current?city=Paris")
+    response = client.get("/weather/current", params={"city":"Paris"})
 
     assert response.status_code == 200
     assert response.json() == mock_response
