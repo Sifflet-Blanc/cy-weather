@@ -1,20 +1,19 @@
-name: Run Tests
+name: tests
 
 on:
   push:
-    branches: [ "main" ]  # Exécute le workflow à chaque push sur la branche main
   pull_request:
-    branches: [ "main" ]  # Exécute le workflow à chaque pull request vers la branche main
 
 jobs:
   test:
     runs-on: ubuntu-latest  # Utilise une machine virtuelle Ubuntu
 
     steps:
-    - uses: actions/checkout@v4  # Récupère le code du dépôt
+    - name: Checkout
+      uses: actions/checkout@v4  # Récupère le code du dépôt
 
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: "3.10"  # Utilise Python 3.10 (adaptez selon votre version)
 
@@ -25,5 +24,7 @@ jobs:
         pip install -r api/requirements.txt
 
     - name: Run tests
+      env:
+        PYTHONPATH: api
       run: |
-        pytest api/tests/ -v  # Exécute les tests dans le dossier tests/
+        pytest tests/ -v
