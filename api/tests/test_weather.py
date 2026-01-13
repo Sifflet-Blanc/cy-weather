@@ -19,7 +19,7 @@ async def test_get_current_weather_success(mock_weather_service):
         "wind_speed": 10.0,
         "description": "Ciel dégagé",
     }
-    mock_weather_service.get_current_weather() = AsyncMock(return_value=mock_response)
+    mock_weather_service.get_current_weather = AsyncMock(return_value=mock_response)
 
     response = client.get("/weather/current", params={"city":"Paris"})
 
