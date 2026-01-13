@@ -1,10 +1,9 @@
 import pytest
 from fastapi.testclient import TestClient
-import sys
-sys.path.append("/home/cytech/Documents/cours/devMLOps/cy-weather/api")
 from main import app
 
 client = TestClient(app)
+
 
 def test_health_check():
     response = client.get("/api/health")
