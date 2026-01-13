@@ -14,10 +14,15 @@ client = TestClient(app)
 @patch("src.resources.weather_resource.weather_service")
 async def test_get_current_weather_success(mock_weather_service):
     mock_response = {
-        "temperature": 20.0,
-        "humidity": 65,
-        "wind_speed": 10.0,
-        "description": "Ciel dégagé",
+        "city": "Paris",
+        "country": "FR",
+        "timestamp": "2026-01-14T12:00:00",
+        "weather": {
+            "temperature": 20.0,
+            "humidity": 65,
+            "wind_speed": 10.0,
+            "description": "Ciel dégagé",
+        }
     }
     mock_weather_service.get_current_weather = AsyncMock(return_value=mock_response)
 
