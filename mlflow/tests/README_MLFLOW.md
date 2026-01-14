@@ -171,55 +171,8 @@ Pour utiliser un serveur différent, modifiez cette ligne dans chaque script.
 pip install mlflow scikit-learn matplotlib numpy scipy
 ```
 
-## 🎓 Exercices pour les étudiants
-
-### Exercice 1: Modifier les paramètres
-Modifiez `mlflow_04_parameter_tuning.py` pour tester d'autres algorithmes (SVM, KNN, etc.).
-
-### Exercice 2: Ajouter des métriques
-Dans `mlflow_01_basic_logging.py`, ajoutez le logging de nouvelles métriques (recall, ROC-AUC, etc.).
-
-### Exercice 3: Monitoring en temps réel
-Créez un script qui charge le modèle en production et surveille ses performances en continu.
-
-### Exercice 4: Alertes automatiques
-Modifiez `mlflow_05_data_drift_detection.py` pour envoyer une alerte (email, Slack) en cas de drift.
-
-### Exercice 5: CI/CD Pipeline
-Intégrez ces scripts dans un pipeline CI/CD (GitHub Actions, GitLab CI, etc.).
-
 ## 🔗 Ressources additionnelles
 
 - [Documentation MLflow](https://mlflow.org/docs/latest/index.html)
 - [MLflow Model Registry](https://mlflow.org/docs/latest/model-registry.html)
 - [Evidently AI (drift detection)](https://www.evidentlyai.com/)
-- [Great Expectations](https://greatexpectations.io/)
-
-## 📝 Notes pédagogiques
-
-### Points clés à souligner:
-
-1. **Reproductibilité**: MLflow garantit que les expériences sont reproductibles
-2. **Traçabilité**: Chaque run est enregistré avec tous ses paramètres
-3. **Collaboration**: L'équipe peut voir et comparer les résultats
-4. **Production-ready**: Le Model Registry facilite le déploiement
-5. **Gouvernance**: Les stages permettent de contrôler ce qui est déployé
-
-### Erreurs communes à éviter:
-
-❌ Ne pas logger les paramètres → impossible de reproduire
-❌ Ne pas versionner les modèles → confusion sur ce qui est déployé
-❌ Ignorer le data drift → dégradation silencieuse des performances
-❌ Ne pas tester avant de promouvoir en Production
-❌ Oublier de documenter les modèles (descriptions, tags)
-
-## 🤝 Support
-
-Pour toute question sur les scripts ou MLflow:
-- Consultez la documentation MLflow
-- Posez des questions pendant le cours
-- Expérimentez et testez différentes configurations!
-
----
-
-**Bon apprentissage! 🚀📊🤖**
