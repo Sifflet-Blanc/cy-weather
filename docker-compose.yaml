@@ -3,7 +3,7 @@ services:
   api:
     build:
       context: ./api
-      dockerfile: Dockerfile-python
+      dockerfile: Dockerfile
     container_name: cy-weather-api
     ports:
       - "8000:8000"

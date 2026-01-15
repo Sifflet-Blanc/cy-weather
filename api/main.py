@@ -50,3 +50,8 @@ async def health_check():
 app.include_router(router)
 app.include_router(weather_router, prefix="/api")
 Instrumentator().instrument(app).expose(app)
+
+if __name__ == "__main__":
+    import uvicorn
+
+    uvicorn.run(app, host="0.0.0.0", port=8000)
